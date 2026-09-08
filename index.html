@@ -2701,28 +2701,28 @@
 
               <form id="contact-form" class="contact-form">
                 <div class="form-group" style="margin-bottom: 0.9rem;">
-                  <input type="text" class="form-input" placeholder="Nombre *" required data-i18n-ph="ph_name">
+                  <input type="text" id="contact-name" class="form-input" placeholder="Nombre *" required data-i18n-ph="ph_name">
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0.9rem;">
-                  <input type="email" class="form-input" placeholder="Email *" required data-i18n-ph="ph_email">
+                  <input type="email" id="contact-email" class="form-input" placeholder="Email *" required data-i18n-ph="ph_email">
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0.9rem;">
-                  <input type="text" class="form-input" placeholder="Institución *" required
+                  <input type="text" id="contact-institution" class="form-input" placeholder="Institución *" required
                     data-i18n-ph="ph_institution">
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0.9rem;">
-                  <input type="tel" class="form-input" placeholder="Teléfono *" required data-i18n-ph="ph_telephone">
+                  <input type="tel" id="contact-phone" class="form-input" placeholder="Teléfono *" required data-i18n-ph="ph_telephone">
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0.9rem;">
-                  <input type="text" class="form-input" placeholder="Asunto *" required data-i18n-ph="ph_subject">
+                  <input type="text" id="contact-subject" class="form-input" placeholder="Asunto *" required data-i18n-ph="ph_subject">
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0.9rem;">
-                  <textarea class="form-input" placeholder="Mensaje *" required data-i18n-ph="ph_message"></textarea>
+                  <textarea id="contact-message" class="form-input" placeholder="Mensaje *" required data-i18n-ph="ph_message"></textarea>
                 </div>
 
                 <div class="form-action">
@@ -2958,6 +2958,7 @@
   </footer>
 
   <!-- App Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="background.js"></script>
   <script src="main.js?v=3"></script>
 

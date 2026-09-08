@@ -746,4 +746,46 @@ document.addEventListener('DOMContentLoaded', () => {
       updateVenueSlide();
     });
   }
+
+  // --- Supabase Contact Form Integration ---
+  const supabaseUrl = 'https://vwokjlewqebmborevnfo.supabase.co'; // URL configurada
+  const supabaseKey = 'sb_publishable_xq6FTB2rw-D4OL9wA4kWeQ_-9ILOs-l'; // Clave anon/public configurada
+  
+  if (typeof supabase !== 'undefined') {
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = contactForm.querySelector('.btn-submit');
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = 'Enviando...';
+        submitBtn.disabled = true;
+
+        const name = document.getElementById('contact-name').value;
+        const email = document.getElementById('contact-email').value;
+        const institution = document.getElementById('contact-institution').value;
+        const phone = document.getElementById('contact-phone').value;
+        const subject = document.getElementById('contact-subject').value;
+        const message = document.getElementById('contact-message').value;
+
+        const { data, error } = await supabaseClient
+          .from('contact_messages') // ASEGURARSE DE QUE LA TABLA SE LLAME ASÍ
+          .insert([{ name, email, institution, phone, subject, message }]);
+
+        if (error) {
+          console.error('Error insertando mensaje:', error);
+          alert('Hubo un error al enviar el mensaje: ' + error.message);
+        } else {
+          alert('¡Mensaje enviado exitosamente!');
+          contactForm.reset();
+        }
+        
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+      });
+    }
+  }
 });
