@@ -63,6 +63,8 @@ const i18nData = {
     venue_place_text: "Lugar: Hotel Antofagasta salón Cobremar y terraza adyacente. Av. Balmaceda 2634, Antofagasta, Chile",
     org_title: "Organizado por",
     co_org_title: "Co-organizado por",
+    sponsor_main_title: "Main Sponsor",
+    sponsor_co_title: "Co-Sponsored by",
     sponsor_magnesium_title: "Auspiciadores Magnesium",
 
     // SOMOS Presentation Block
@@ -290,6 +292,8 @@ const i18nData = {
     venue_place_text: "Place Hotel Antofagasta salón Cobremar y terraza adyacente. Av. Balmaceda 2634, Antofagasta, Chile",
     org_title: "Organized by",
     co_org_title: "Co-organized by",
+    sponsor_main_title: "Main Sponsor",
+    sponsor_co_title: "Co-Sponsored by",
     sponsor_magnesium_title: "Magnesium Sponsor",
 
     // SOMOS Presentation Block
